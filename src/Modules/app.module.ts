@@ -1,10 +1,10 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
+import { AppController } from '../app.controller';
+import { AppService } from '../app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { Player } from './Entities/player.entity';
-import { Teams } from './Entities/teams.entity';
-import { TeamsId } from './Entities/teamsId.entiy';
+import { Players } from '../Entities/player.entity';
+import { Teams } from '../Entities/teams.entity';
+import { TeamsId } from '../Entities/teamsId.entiy';
 
 @Module({
   imports: [
@@ -15,10 +15,10 @@ import { TeamsId } from './Entities/teamsId.entiy';
       username: 'root',
       password: 'root',
       database: 'test',
-      entities: [Player, Teams, TeamsId],
+      entities: [Players, Teams, TeamsId],
       synchronize: true,
     }),
-    TypeOrmModule.forFeature([Player, Teams, TeamsId]),
+    TypeOrmModule.forFeature([Players, Teams, TeamsId]),
   ],
   controllers: [AppController],
   providers: [AppService],
