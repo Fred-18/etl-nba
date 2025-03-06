@@ -17,6 +17,7 @@ import { TeamsId } from '../Entities/teamsId.entiy';
       database: 'test',
       entities: [Players, Teams, TeamsId],
       synchronize: true,
+      autoLoadEntities: true,
     }),
     TypeOrmModule.forFeature([Players, Teams, TeamsId]),
   ],

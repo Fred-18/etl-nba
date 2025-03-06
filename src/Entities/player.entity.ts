@@ -1,4 +1,11 @@
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import {
+  Entity,
+  Column,
+  PrimaryGeneratedColumn,
+  OneToOne,
+  JoinColumn,
+} from 'typeorm';
+import { Teams } from './teams.entity';
 
 @Entity()
 export class Players {
@@ -9,7 +16,7 @@ export class Players {
   firstname: string;
 
   @Column()
-  name: number;
+  lastname: number;
 
   @Column('json')
   birth: {
@@ -39,4 +46,7 @@ export class Players {
       pos: string;
     };
   };
+  @OneToOne(() => Teams)
+  @JoinColumn()
+  team: Teams;
 }

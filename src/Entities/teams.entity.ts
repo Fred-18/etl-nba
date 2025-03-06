@@ -1,4 +1,11 @@
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import {
+  Entity,
+  Column,
+  PrimaryGeneratedColumn,
+  OneToMany,
+  JoinColumn,
+} from 'typeorm';
+import { Players } from './player.entity';
 
 @Entity()
 export class Teams {
@@ -36,5 +43,7 @@ export class Teams {
       division: string;
     };
   };
+  @OneToMany(() => Players, (players) => players.team)
+  @JoinColumn()
+  players: Players[];
 }
-
