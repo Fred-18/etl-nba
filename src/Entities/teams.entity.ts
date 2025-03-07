@@ -3,9 +3,9 @@ import {
   Column,
   PrimaryGeneratedColumn,
   OneToMany,
-  JoinColumn,
-} from 'typeorm';
-import { Players } from './player.entity';
+  JoinColumn
+} from "typeorm";
+import { Players } from "./player.entity";
 
 @Entity()
 export class Teams {
@@ -37,12 +37,12 @@ export class Teams {
   nbaFranchise: boolean;
 
   @Column()
-  leagues: {
-    standard: {
-      conference: string;
-      division: string;
-    };
-  };
+  league: string;
+  @Column()
+  conference: string;
+  @Column()
+  division: string;
+
   @OneToMany(() => Players, (players) => players.team)
   @JoinColumn()
   players: Players[];

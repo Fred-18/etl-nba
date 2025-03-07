@@ -1,29 +1,39 @@
-import { EntitySchema } from "typeorm";
-import { Players } from "../Entities/player.entity";
-import isEnvironmentTornDown = jest.isEnvironmentTornDown;
+import { EntitySchema } from 'typeorm';
+import { Players } from '../Entities/player.entity';
 
-export const PlayerSchema = EntitySchema<Players>({
-  name: "Players",
+
+
+//todo déclarer les bon type pour construire le shecma penser a l'extraire ensuite
+
+export const PlayerSchema = new EntitySchema<Players>({
+  name: 'Players',
   target: Players,
-  Columns {
+  columns: {
     id: {
       type: Number,
       primary: true,
-      generated: true
+      generated: true,
     },
     firstName: {
-      type: String
+      type: String,
     },
     lastName: {
-      type: String
+      type: String,
     },
-    birth: {
+    birth:{
       date: String,
-      country: String
+      country: String,
+    },
     },
     height: {
-      feet:number,
-
-    }
-  })
+      feet: number,
+      inches: number,
+      meters: number,
+    },
+    weight: {
+      pounds: number,
+      kilograms: number,
+    },
+  },
+});
 //todo player schema wip†
