@@ -5,9 +5,11 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { Players } from '../Entities/player.entity';
 import { Teams } from '../Entities/teams.entity';
 import { TeamsId } from '../Entities/teamsId.entiy';
+import { CacheModule } from '@nestjs/cache-manager';
 
 @Module({
   imports: [
+    CacheModule.register(),
     TypeOrmModule.forRoot({
       type: 'mysql',
       host: 'localhost',

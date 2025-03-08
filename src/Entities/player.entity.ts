@@ -16,7 +16,7 @@ export class Players {
   firstName: string;
 
   @Column()
-  lastName: number;
+  lastName: string;
 
   @Column({ type: String })
   birth_date: string;

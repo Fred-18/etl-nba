@@ -1,16 +1,17 @@
-import { Injectable } from '@nestjs/common';
+import { Inject, Injectable } from '@nestjs/common';
 import axios from 'axios';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Players } from '../Entities/player.entity';
 import { Repository } from 'typeorm';
 import * as process from 'node:process';
-import { PlayerDto } from '../playersDto.ts/PlayerDto';
+import { CACHE_MANAGER } from '@nestjs/cache-manager';
 
 @Injectable()
 export class ApiService {
   constructor(
     @InjectRepository(Players)
     private readonly playerRepository: Repository<Players>,
+    @Inject(CACHE_MANAGER) private cacheManager: Cache,
   ) {}
 
   async fetchPlayerAndStore(
@@ -41,3 +42,5 @@ export class ApiService {
     }
   }
 }
+
+//todo je viens d'ajouter le cache manager//

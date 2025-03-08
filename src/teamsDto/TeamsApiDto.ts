@@ -1,6 +1,7 @@
 import { IsBoolean, IsNumber, IsString } from 'class-validator';
+import { GetPlayersDtoForTableRelation } from '../playerService/GetPlayersDtoForTableRelation';
 
-export class TeamsDto {
+export class TeamsApiDto {
   @IsNumber()
   id: number;
 
@@ -33,4 +34,6 @@ export class TeamsDto {
 
   @IsString()
   division: string;
+
+  players: GetPlayersDtoForTableRelation;
 }

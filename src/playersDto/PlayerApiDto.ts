@@ -1,6 +1,7 @@
 import { IsBoolean, IsNumber, IsOptional, IsString } from 'class-validator';
+import { GetTeamDtoForTableRelation } from '../teamsDto/GetTeamDtoForTableRelation';
 
-export class PlayerDto {
+export class PlayerApiDto {
   @IsNumber()
   id: number;
 
@@ -47,4 +48,6 @@ export class PlayerDto {
 
   @IsString()
   league: string;
+
+  team: GetTeamDtoForTableRelation;
 }
