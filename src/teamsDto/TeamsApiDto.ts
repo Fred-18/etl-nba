@@ -1,5 +1,5 @@
 import { IsBoolean, IsNumber, IsString } from 'class-validator';
-import { GetPlayersDtoForTableRelation } from '../playerService/GetPlayersDtoForTableRelation';
+import { GetPlayersDtoForTableRelation } from '../playersDto/GetPlayersDtoForTableRelation';
 
 export class TeamsApiDto {
   @IsNumber()
