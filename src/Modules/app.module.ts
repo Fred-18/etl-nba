@@ -5,16 +5,20 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { Players } from '../Entities/player.entity';
 import { Teams } from '../Entities/teams.entity';
 import { TeamsId } from '../Entities/teamsId.entiy';
+import { CacheModule } from '@nestjs/cache-manager';
+import { HttpModule } from '@nestjs/axios';
 
 @Module({
   imports: [
+    HttpModule,
+    CacheModule.register(),
     TypeOrmModule.forRoot({
-      type: 'mysql',
+      type: 'postgres',
       host: 'localhost',
-      port: 3306,
+      port: 5432,
       username: 'root',
       password: 'root',
-      database: 'test',
+      database: 'PostgresSQL',
       entities: [Players, Teams, TeamsId],
       synchronize: true,
       autoLoadEntities: true,

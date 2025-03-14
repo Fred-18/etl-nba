@@ -3,9 +3,9 @@ import {
   Column,
   PrimaryGeneratedColumn,
   OneToOne,
-  JoinColumn
-} from "typeorm";
-import { Teams } from "./teams.entity";
+  JoinColumn,
+} from 'typeorm';
+import { Teams } from './teams.entity';
 
 @Entity()
 export class Players {
@@ -13,10 +13,10 @@ export class Players {
   id: number;
 
   @Column()
-  firstname: string;
+  firstName: string;
 
   @Column()
-  lastname: number;
+  lastName: string;
 
   @Column({ type: String })
   birth_date: string;
@@ -24,26 +24,33 @@ export class Players {
   @Column()
   birth_country: string;
 
-  @Column({ type: "float" })
+  @Column({ type: 'decimal', nullable: true })
   height_meters: number;
 
-  @Column({ type: "float" })
+  @Column({ type: 'decimal', nullable: true })
   weight_kilograms: number;
+
   @Column()
   feet: number;
+
   @Column()
   pounds: number;
+
   @Column()
   college: string;
 
   @Column()
   affiliation: string;
+
   @Column()
   jersey: number;
+
   @Column()
   active: boolean;
+
   @Column()
   pos: string;
+
   @Column()
   league: string;
 
