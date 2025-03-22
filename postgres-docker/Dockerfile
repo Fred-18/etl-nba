@@ -1,11 +1,44 @@
 
 FROM postgres:latest  
 
-ENV POSTGRES_USER
-ENV POSTGRES_PASSWORD
-ENV POSTGRES_DB
+# Exposer le port PostgreSQL
+EXPOSE 5433
 
-EXPOSE 5432  
-2
+# Démarrer PostgreSQL
 CMD ["postgres"]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
