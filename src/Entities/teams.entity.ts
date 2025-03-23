@@ -16,7 +16,7 @@ export class Teams {
   name: string;
 
   @Column()
-  nickname: string;
+  nickName: string;
 
   @Column()
   code: string;

@@ -9,7 +9,7 @@ export class TeamsApiDto {
   name: string;
 
   @IsString()
-  nickname: string;
+  nickName: string;
 
   @IsString()
   code: string;
